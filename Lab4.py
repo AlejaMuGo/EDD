@@ -235,22 +235,38 @@ def listaSimplePares(inicio, fin):
     simplePares.removeFirst()
     simplePares.removeLast()
 
+    def buscarnodo(numero):
+        n = simplePares.First()
+        for i in range(simplePares.size()):
+            if n.getData() == numero:
+                return n
+            n = n.getNext()
+
     def eliminarNodo(numero):
-        listaTemp = List()
         elemento = simplePares.First()
+        anterior = elemento
         s = simplePares.size()
         x = 0
+        y = 1
         while x < s:
-            if elemento.getData() != numero:
+            if x+1 == y and x != 0 and x!= 1:
+                anterior = anterior.getNext()
+            if numero == simplePares.First().getData():
                 simplePares.removeFirst()
-                listaTemp.addFirst(elemento)
-                print(type(elemento.getData()))
+                break
+            elif numero == simplePares.Last().getData():
+                simplePares.removeLast()
+                break
             elif elemento.getData() == numero:
-                print("stop")
+                anterior.setNext(elemento.getNext())
+                s -= 1
+                simplePares.setSize(s)
                 break
             x += 1
+            y += 1
+            elemento = elemento.getNext()
 
-    eliminarNodo(8)
+    eliminarNodo(10)
     elemento = simplePares.First()
     for j in range(simplePares.size()):
         print(elemento.getData())
@@ -364,5 +380,5 @@ def coleccionDoble():
     for i in range(dobleUsuarios.size()):
         print(elemento.getData())
         elemento = elemento.getNext()
-# coleccionsimple()
-# coleccionDoble()
+#coleccionsimple()
+#coleccionDoble()
