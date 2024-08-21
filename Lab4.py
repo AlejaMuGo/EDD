@@ -65,7 +65,7 @@ class List:
         self._size += 1
 
     def removeFirst(self):
-        if self.isEmpty() == False:
+        if not self.isEmpty():
             temp = self._head
             self._head = temp.getNext()
             temp.setNext(None)
@@ -301,8 +301,8 @@ def listaDoblePares(inicio, fin):
         elemento = elemento.getNext()
 
 
-listaSimplePares(1, 20)
-listaDoblePares(1, 20)
+#listaSimplePares(1, 20)
+#listaDoblePares(1, 20)
 
 u1 = Usuario("Aleja Munoz", 1000557085)
 u2 = Usuario("Marysol Gonzalez", 43555206)

@@ -16,7 +16,7 @@ class Fecha:
     def getA(self):
         return self._aa
     def __str__(self):
-        return f"{self._dd}/{self._mm}/{self._aa}"
+        return f"{self._dd} {self._mm} {self._aa}"
 
 class Direccion:
     def __init__(self,c,n,b,ci,e,a):
@@ -51,7 +51,7 @@ class Direccion:
     def getApto(self):
         return self._apto
     def __str__(self):
-        return f"{self._calle},{self._nomenclatura},{self._barrio},{self._ciudad},{self._edificio},{self._apto}"
+        return f"{self._calle} {self._nomenclatura} {self._barrio} {self._ciudad} {self._edificio} {self._apto}"
 
 class Usuario:
     def __init__(self, n, id):
