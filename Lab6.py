@@ -20,7 +20,7 @@ class Stack:
         self._data.removeFirst()
         return temp.getData()
     def top(self):
-        if not isEmpty():
+        if not self.isEmpty():
             return self._data.First().getData()
         else:
             return None
@@ -82,7 +82,7 @@ def Main():
     turnos.atenderSiguiente()
     turnos.atenderSiguiente()
     turnos.toFile()
-Main()
+#Main()
 
 def pila():
     pilaEnteros = Stack()

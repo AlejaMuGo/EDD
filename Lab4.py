@@ -1,7 +1,6 @@
 from Lab2 import Usuario
 from Lab3 import Agenda
 
-
 class Node:
     def __init__(self, e):
         self._data = e
@@ -18,7 +17,6 @@ class Node:
 
     def getNext(self):
         return self._next
-
 
 class List:
     def __init__(self):
@@ -160,11 +158,14 @@ class DoubleList:
         self._size += 1
 
     def removeFirst(self):
-        if self.isEmpty() == False:
+        if not self.isEmpty():
             temp = self._head
             self._head = temp.getNext()
+            if self._head is not None:  # Si hay más nodos después
+                self._head.setPrev(None)
+            else:  # Si se eliminó el único nodo
+                self._tail = None
             temp.setNext(None)
-            self._head.setPrev(None)
             self._size -= 1
             return temp.getData()
         else:
